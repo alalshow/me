@@ -29,7 +29,7 @@ public class PostsRepositoryTest {
 	}
 	
 	@Test
-	public void 게시글저장_불러오기() {
+	public void 게시글_저장() {
 		//given
 		postsRepository.save(Posts.builder()
 		.title("테스트 게시글")
@@ -37,8 +37,26 @@ public class PostsRepositoryTest {
 		.author("alalshow211@gmail.com")
 		.build());
 		
-		//when
+	}
+	
+	@Test
+	public List<Posts> 게시글_불러오기() {
+//		게시글저장_불러오기();
+		System.out.println("---게시글_불러오기---");
 		List<Posts> postsList = postsRepository.findAll();
+		System.out.println("---게시글_사이즈:---" + postsList.size());
+		postsList.stream().forEach((c) -> System.out.println(c.toString()));
+		return postsList;
+		
+	}
+	
+	@Test
+	public void 게시글저장_불러오기() {
+		System.out.println("게시글저장_불러오기");
+		//given
+		게시글_저장();
+		//when
+		List<Posts> postsList = 게시글_불러오기();
 		
 		//then
 		Posts posts = postsList.get(0);
