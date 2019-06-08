@@ -1,4 +1,4 @@
-package com.alalshow.me.domain;
+package com.alalshow.me.domain.posts;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,4 +1,4 @@
-package com.alalshow.me.domain;
+package com.alalshow.me.domain.posts;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,7 +14,7 @@ import lombok.Setter;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
 	@Id
 	@GeneratedValue
