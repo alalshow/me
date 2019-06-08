@@ -22,45 +22,45 @@ public class PostsRepositoryTest {
 	@After
 	public void cleanup() {
 		/**
-		ÀÌÈÄ Å×½ºÆ® ÄÚµå¿¡ ¿µÇâÀ» ³¢Ä¡Áö ¾Ê±â À§ÇØ
-		Å×½ºÆ® ¸Ş¼Òµå°¡ ³¡³¯¶§ ¸¶´Ù respository ÀüÃ¼ ºñ¿ì´Â ÄÚµå
+		ì´í›„ í…ŒìŠ¤íŠ¸ ì½”ë“œì— ì˜í–¥ì„ ë¼ì¹˜ì§€ ì•Šê¸° ìœ„í•´
+		í…ŒìŠ¤íŠ¸ ë©”ì†Œë“œê°€ ëë‚ ë•Œ ë§ˆë‹¤ respository ì „ì²´ ë¹„ìš°ëŠ” ì½”ë“œ
 		**/
 		postsRepository.deleteAll();
 	}
 	
 	@Test
-	public void °Ô½Ã±Û_ÀúÀå() {
+	public void ê²Œì‹œê¸€_ì €ì¥() {
 		//given
 		postsRepository.save(Posts.builder()
-		.title("Å×½ºÆ® °Ô½Ã±Û")
-		.content("Å×½ºÆ® º»¹®")
+		.title("í…ŒìŠ¤íŠ¸ ê²Œì‹œê¸€")
+		.content("í…ŒìŠ¤íŠ¸ ë³¸ë¬¸")
 		.author("alalshow211@gmail.com")
 		.build());
 		
 	}
 	
 	@Test
-	public List<Posts> °Ô½Ã±Û_ºÒ·¯¿À±â() {
-//		°Ô½Ã±ÛÀúÀå_ºÒ·¯¿À±â();
-		System.out.println("---°Ô½Ã±Û_ºÒ·¯¿À±â---");
+	public List<Posts> ê²Œì‹œê¸€_ë¶ˆëŸ¬ì˜¤ê¸°() {
+//		ê²Œì‹œê¸€ì €ì¥_ë¶ˆëŸ¬ì˜¤ê¸°();
+		System.out.println("---ê²Œì‹œê¸€_ë¶ˆëŸ¬ì˜¤ê¸°---");
 		List<Posts> postsList = postsRepository.findAll();
-		System.out.println("---°Ô½Ã±Û_»çÀÌÁî:---" + postsList.size());
+		System.out.println("---ê²Œì‹œê¸€_ì‚¬ì´ì¦ˆ:---" + postsList.size());
 		postsList.stream().forEach((c) -> System.out.println(c.toString()));
 		return postsList;
 		
 	}
 	
 	@Test
-	public void °Ô½Ã±ÛÀúÀå_ºÒ·¯¿À±â() {
-		System.out.println("°Ô½Ã±ÛÀúÀå_ºÒ·¯¿À±â");
+	public void ê²Œì‹œê¸€ì €ì¥_ë¶ˆëŸ¬ì˜¤ê¸°() {
+		System.out.println("ê²Œì‹œê¸€ì €ì¥_ë¶ˆëŸ¬ì˜¤ê¸°");
 		//given
-		°Ô½Ã±Û_ÀúÀå();
+		ê²Œì‹œê¸€_ì €ì¥();
 		//when
-		List<Posts> postsList = °Ô½Ã±Û_ºÒ·¯¿À±â();
+		List<Posts> postsList = ê²Œì‹œê¸€_ë¶ˆëŸ¬ì˜¤ê¸°();
 		
 		//then
 		Posts posts = postsList.get(0);
-		assertThat(posts.getTitle(), is("Å×½ºÆ® °Ô½Ã±Û"));
-		assertThat(posts.getContent(), is("Å×½ºÆ® º»¹®"));
+		assertThat(posts.getTitle(), is("í…ŒìŠ¤íŠ¸ ê²Œì‹œê¸€"));
+		assertThat(posts.getContent(), is("í…ŒìŠ¤íŠ¸ ë³¸ë¬¸"));
 	}
 }
