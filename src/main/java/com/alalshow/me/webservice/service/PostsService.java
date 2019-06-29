@@ -28,9 +28,5 @@ public class PostsService {
         return postsRepository.findAllDesc()
                 .map(PostsMainResponseDto::new)
                 .collect(Collectors.toList());
-//        return postsRepository.findAllDesc()
-//        		.map(posts -> new PostsMainResponseDto(posts))
-//                .collect(Collectors.toList());
-        
     }
 }
