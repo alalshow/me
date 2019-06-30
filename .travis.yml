@@ -31,4 +31,6 @@ deploy:
     wait-until-deployed: true
     on:
       repo: alalshow/me #Github 주소
-      branch: master      
+      branch: master
+      
+      
