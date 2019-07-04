@@ -20,6 +20,11 @@ public class MeRestController {
 	public String hello() {
 		return "HelloWorld";
 	}
+	
+	@GetMapping("/helloBk")
+	public String helloBk() {
+		return "helloBk";
+	}
 
     @PostMapping("/posts")
     public Long savePosts(@RequestBody PostsSaveRequestDto dto){
